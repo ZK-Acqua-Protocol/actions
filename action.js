@@ -32,7 +32,7 @@ let url;
 let payload;
 
 if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
-  // If argument and embeds NOT provided, let Discord show the event informations.
+  // If argument and embeds NOT provided, let Discord show the event information.
   url = `${process.env.DISCORD_WEBHOOK}/github`;
   payload = JSON.stringify(JSON.parse(eventContent));
 } else {
@@ -41,6 +41,9 @@ if (argv._.length === 0 && !process.env.DISCORD_EMBEDS) {
   const message = _.template(args)({ ...process.env, EVENT_PAYLOAD: JSON.parse(eventContent) });
 
   let embedsObject;
+  /**
+   * TODO: Need to handle embed correctly
+   */
   if (process.env.DISCORD_EMBEDS) {
      try {
         embedsObject = JSON.parse(process.env.DISCORD_EMBEDS);
