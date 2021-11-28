@@ -1,0 +1,13 @@
+name: 'Discord Notification Action [push]'
+description: 'Send discord notification message on push event'
+author: Ashish Chaudhary <seerviashish17@gmail.com>
+branding:
+  icon: bell
+  color: blue
+inputs:
+  args:
+    description: 'The message to display in the Discord message.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
